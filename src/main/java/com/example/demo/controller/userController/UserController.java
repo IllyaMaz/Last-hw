@@ -1,4 +1,4 @@
-package com.example.demo.userController;
+package com.example.demo.controller.userController;
 
 import com.example.demo.db.repository.ManufacturerRepository;
 import com.example.demo.db.repository.ProductRepository;

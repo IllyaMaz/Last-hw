@@ -1,4 +1,4 @@
-package com.example.demo.adminController;
+package com.example.demo.controller.adminController;
 
 
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.example.demo.errorController;
+package com.example.demo.controller.errorController;
 
 import com.example.demo.db.entity.Manufacturer;
 import com.example.demo.db.entity.Role;

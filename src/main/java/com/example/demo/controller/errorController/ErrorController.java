@@ -1,16 +1,10 @@
-package com.example.demo.errorController;
+package com.example.demo.controller.errorController;
 
-import com.example.demo.db.repository.ManufacturerRepository;
-import com.example.demo.db.repository.RoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
 
 @RequiredArgsConstructor
 @RequestMapping("/error")

@@ -1,4 +1,4 @@
-package com.example.demo.adminController;
+package com.example.demo.controller.adminController;
 
 import com.example.demo.db.entity.Manufacturer;
 import com.example.demo.db.entity.Product;
