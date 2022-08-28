@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+<form th:action="@{/exit}" method="post">
+<nav class="nav nav-pills nav-justified">
+    <a class="nav-link" href="/admin/manufacture">Manufacture</a>
+    <a class="nav-link" href="/admin/product">Product</a>
+    <a class="nav-link" href="/admin/users">User</a>
+    <div class="dropdown" style="width: 20%">
+    <button class="btn btn-light"  data-bs-toggle="dropdown" style="--bs-btn-color: blue; --bs-btn-bg: white;width: 100%">Add</button>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/admin/manufacture/add">Manufacture</a></li>
+        <li><a class="dropdown-item" href="/admin/product/add">Product</a></li>
+        <li><a class="dropdown-item" href="/admin/users/add">User</a></li>
+    </ul>
+    </div>
+    <button class="btn btn-danger" type="submit" style="width: 20%">Exit</button>
+</nav>
+</form>
+
+<form action="/admin/product/change" method="post" >
+
+    <div class="mb-3" style="width: 20%; margin: auto; margin-top: 10%">
+        <label  class="form-label">Name Product</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp" name="name">
+    </div>
+    <div class="mb-3" style="width: 20%; margin: auto">
+        <label  class="form-label">Price</label>
+        <input type="text" class="form-control"  aria-describedby="emailHelp" name="price">
+    </div>
+    <div style="width: 20%;margin: auto">
+        <label class="form-label">Manufacture</label>
+        <select class="form-select" aria-label="Default select example" name="manufacture">
+            <option th:each="man: ${manufacture}">
+                <div th:text="${man.name}"></div>
+            </option>
+        </select>
+    </div><br>
+
+    <div style="margin-left: 40% ">
+        <button type="submit" class="btn btn-primary">Change</button>
+    </div>
+</form>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
