@@ -1,14 +1,14 @@
+create table manufacturer(
+	id uuid default gen_random_uuid() primary key,
+	name varchar(50)
+);
+
 create table product(
 	id uuid default gen_random_uuid() primary key,
 	name varchar(50),
-	price decimal
-);
-
-create table manufacturer(
-	id uuid default gen_random_uuid() primary key,
-	name varchar(50),
-	product_id uuid,
-	foreign key (product_id) references product(id)
+	price decimal,
+	id_manufacturer uuid,
+	foreign key (id_manufacturer) references manufacturer(id)
 );
 
 create table role(

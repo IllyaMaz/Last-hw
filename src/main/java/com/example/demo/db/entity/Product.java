@@ -24,7 +24,7 @@ public class Product {
     private BigDecimal price;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "manufactur_id")
+    @JoinColumn(name = "id_manufacturer")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Manufacturer manufacturer;
 }
