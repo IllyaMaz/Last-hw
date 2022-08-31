@@ -38,4 +38,10 @@ public class ErrorController {
         ModelAndView modelAndView = new ModelAndView("errorCreateUser");
         return modelAndView;
     }
+
+    @GetMapping("/emailExists")
+    public ModelAndView getErrorEmailExists(){
+        ModelAndView modelAndView = new ModelAndView("errorEmailExists");
+        return modelAndView;
+    }
 }

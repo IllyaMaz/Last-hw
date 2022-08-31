@@ -28,6 +28,7 @@ public class CustomConfigProvider  {
                 .authorizeRequests()
                 .antMatchers("/createUser").permitAll()
                 .antMatchers("/error/createUser").permitAll()
+                .antMatchers("/error/emailExists").permitAll()
                 .antMatchers("/admin/*").hasAuthority("admin")
                 .antMatchers("/admin/*/*").hasAuthority("admin")
                 .antMatchers("/user/*").hasAuthority("user")

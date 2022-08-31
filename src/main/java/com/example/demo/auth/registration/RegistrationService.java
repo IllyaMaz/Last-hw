@@ -25,13 +25,20 @@ public class RegistrationService {
         String password = req.get("password");
         String firstName = req.get("firstName");
         String lastName = req.get("lastName");
+        Optional<Users> byEmail = usersRepository.findByEmail(email);
         if (email.equals("") || password.equals("") || firstName.equals("") || lastName.equals("")){
             try {
                 resp.sendRedirect("/error/createUser");
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else {
+        } else if (!byEmail.isEmpty()){
+            try {
+                resp.sendRedirect("/error/emailExists");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else {
             Optional<Role> role = roleRepository.findByName("user");
 
             Users user = new Users();

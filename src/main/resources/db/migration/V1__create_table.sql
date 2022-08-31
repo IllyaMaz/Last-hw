@@ -8,7 +8,7 @@ create table product(
 	name varchar(50),
 	price decimal,
 	id_manufacturer uuid,
-	foreign key (id_manufacturer) references manufacturer(id)
+	foreign key (id_manufacturer) references manufacturer(id) on delete cascade
 );
 
 create table role(
