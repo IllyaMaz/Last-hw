@@ -137,6 +137,7 @@ public class AdminService {
         String firstName = map.get("firstName");
         String lastName = map.get("lastName");
         String role = map.get("role");
+        Optional<Users> byEmail = usersRepository.findByEmail(email);
 
         if (email.equals("") || password.equals("") || firstName.equals("") || lastName.equals("") || role.equals("")){
             try {
@@ -144,7 +145,13 @@ public class AdminService {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else {
+        }else if (!byEmail.isEmpty()){
+            try {
+                resp.sendRedirect("/error/email/exist");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
             Optional<Role> byName = roleRepository.findByName(role);
             Users user = new Users();
             user.setEmail(email);

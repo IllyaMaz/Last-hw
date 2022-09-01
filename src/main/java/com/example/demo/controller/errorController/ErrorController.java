@@ -44,4 +44,11 @@ public class ErrorController {
         ModelAndView modelAndView = new ModelAndView("errorEmailExists");
         return modelAndView;
     }
+
+    @GetMapping("/email/exist")
+    public ModelAndView getErrorAddUserEmailExist(){
+        ModelAndView modelAndView = new ModelAndView("errorAddUserEmailExist");
+        modelAndView.addObject("roles",errorService.getAllRole());
+        return modelAndView;
+    }
 }
